@@ -33,5 +33,16 @@ public class ApplicationTest {
         });
     }
 
-    // TODO: 테스트 코드 추가 가능합니다.
+    @Test
+    public void 나눈_나머지를_포함한_수식_계산() {
+        int result = calculator.calculate("5%2+10");
+        assertThat(result).isEqualTo(11);
+    }
+
+    @Test
+    public void 음수로_시작하는_수식_계산() {
+        int result = calculator.calculate("-10+50*5");
+        assertThat(result).isEqualTo(240);
+    }
+
 }
