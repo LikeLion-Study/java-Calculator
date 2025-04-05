@@ -14,7 +14,7 @@ public class Console {
         System.out.println(MESSAGE_INPUT_GUIDE);
         return scanner.nextLine();
     }
-    public void printResult() {
+    public void printResult(int result) {
         // TODO: 결과값 출력
     }
 }
