@@ -15,6 +15,6 @@ public class Console {
         return scanner.nextLine();
     }
     public void printResult(int result) {
-        // TODO: 결과값 출력
+        System.out.println(String.format(MESSAGE_OUTPUT_FORMATTED, result));
     }
 }
