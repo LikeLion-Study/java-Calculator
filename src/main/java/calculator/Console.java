@@ -11,8 +11,8 @@ public class Console {
     private static final Scanner scanner = new Scanner(System.in);
 
     public String readInput() {
-        // TODO: 입력 안내 출력 후 입력 받기
-        return null;
+        System.out.println(MESSAGE_INPUT_GUIDE);
+        return scanner.nextLine();
     }
     public void printResult() {
         // TODO: 결과값 출력
