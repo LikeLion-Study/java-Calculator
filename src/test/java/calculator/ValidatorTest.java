@@ -32,7 +32,7 @@ class ValidatorTest {
         String input = "3++2";
         Exception e = assertThrows(IllegalArgumentException.class, () -> validator.divideInput(input));
 
-        assertThat(e.getMessage()).isEqualTo(Console.MESSAGE_ERROR_CONSECUTIVE_OPERATORS);
+        assertThat(e.getMessage()).isEqualTo(Console.MESSAGE_ERROR_WRONG_POSITION_OPERATORS);
     }
 
     @Test
@@ -48,7 +48,7 @@ class ValidatorTest {
         String input = "+12+3-5";
         Exception e = assertThrows(IllegalArgumentException.class, () -> validator.divideInput(input));
 
-        assertThat(e.getMessage()).isEqualTo(Console.MESSAGE_ERROR_CONSECUTIVE_OPERATORS);
+        assertThat(e.getMessage()).isEqualTo(Console.MESSAGE_ERROR_WRONG_POSITION_OPERATORS);
 
     }
 

@@ -27,7 +27,7 @@ public class Validator {
                 validateLastNumber(i, input.length() - 1, currentNumber);
 
             } else if (OPERATORS.contains(ch)) {
-                validateConsecutiveOperators(currentNumber);
+                validateOperatorPosition(currentNumber);
 
                 inputArrayList.add(currentNumber);
                 inputArrayList.add(String.valueOf(ch));
@@ -54,9 +54,9 @@ public class Validator {
         }
     }
 
-    private void validateConsecutiveOperators(String currentNumber) {
+    private void validateOperatorPosition(String currentNumber) {
         if (currentNumber.isEmpty()) {
-            throw new IllegalArgumentException(Console.MESSAGE_ERROR_CONSECUTIVE_OPERATORS);
+            throw new IllegalArgumentException(Console.MESSAGE_ERROR_WRONG_POSITION_OPERATORS);
         }
     }
 
