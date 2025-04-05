@@ -7,5 +7,6 @@ public class Application {
         // 예시 코드
         Calculator calculator = new Calculator();
         calculator.calculate("");
+
     }
 }
