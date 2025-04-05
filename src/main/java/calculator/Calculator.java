@@ -1,13 +1,55 @@
 package calculator;
 
-/*
-    1주차에만 제공되는 예시 코드입니다.
-    코드는 그대로 사용해도 되고 수정해도 됩니다.
- */
+import java.util.*;
 
+// 연산 책임
 public class Calculator {
-    public int calculate(String input) {
-        // TODO: 코드 구현
-        throw new IllegalArgumentException("아직 구현되지 않았습니다.");
+
+    private int result = 0;
+
+    public int calculate(ArrayList<String> inputArrayList) {
+
+        // 단일 원소인 경우 그대로 return
+        if (isSingleElement(inputArrayList)) {
+            return Integer.parseInt(inputArrayList.get(0));
+        }
+
+        // 큐 선언
+        LinkedList<String> stringQueue = toQueue(inputArrayList);
+
+        while (stringQueue.size() > 1) {
+
+            result = operate(
+                    stringQueue.poll(),
+                    stringQueue.poll(),
+                    stringQueue.poll()
+            );
+
+            stringQueue.addFirst(String.valueOf(result));
+        }
+
+        return result;
+    }
+
+
+    private boolean isSingleElement(ArrayList<String> inputArrayList) {
+        return inputArrayList.size() == 1;
+    }
+
+    private LinkedList<String> toQueue(ArrayList<String> inputArrayList) {
+        return new LinkedList<>(inputArrayList);
+    }
+
+    private int operate(String num1String, String operator, String num2String) {
+        int num1 = Integer.parseInt(num1String);
+        int num2 = Integer.parseInt(num2String);
+
+        return switch (operator) {
+            case "+" -> num1 + num2;
+            case "-" -> num1 - num2;
+            case "*" -> num1 * num2;
+            case "/" -> num1 / num2;
+            default -> throw new IllegalStateException("Unexpected value: " + operator);
+        };
     }
 }
