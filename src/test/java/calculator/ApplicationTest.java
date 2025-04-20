@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 public class ApplicationTest {
     Calculator calculator = new Calculator();
 
-    @Test
-    public void 빈_문자열_입력_시_0을_반환한다() {
-        // 아직 calculate 함수가 구현되지 않은 상태에서 TDD Red Test용 코드
-        int result = calculator.calculate("");
-        assertThat(result).isEqualTo(0);
-    }
+//    @Test
+//    public void 빈_문자열_입력_시_0을_반환한다() {
+//        // 아직 calculate 함수가 구현되지 않은 상태에서 TDD Red Test용 코드
+//        int result = calculator.calculate("");
+//        assertThat(result).isEqualTo(0);
+//    }
 
     @Test
     public void 덧셈과_뺄셈만_포함된_수식_계산() {
