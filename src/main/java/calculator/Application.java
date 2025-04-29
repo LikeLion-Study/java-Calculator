@@ -1,11 +1,19 @@
 package calculator;
 
+import java.util.Scanner;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 코드 작성
+        Scanner scanner = new Scanner(System.in);
 
-        // 예시 코드
         Calculator calculator = new Calculator();
-        calculator.calculate("");
+
+        while (true) {
+            String string = scanner.nextLine();
+            System.out.println("수식을 입력해 주세요");
+
+            if(string.contains("e")) break;
+            System.out.println(calculator.calculate(string));
+        }
     }
 }
